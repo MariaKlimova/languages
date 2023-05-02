@@ -12,7 +12,7 @@ const renderStatsData = () => {
                 <h1 style="text-align: center">${stats.lists_amount}</h1>
             </div>
             <div class="col d-flex card border-info border-2 mx-2" style="height: 300px; display: flex; flex-direction: column; justify-content: center">
-                <h5 style="text-align: center">Всего терминов:</h5>
+                <h5 style="text-align: center">Всего слов:</h5>
                 <h1 style="text-align: center">${stats.words_amount}</h1>
             </div>
             <div class="col d-flex card border-info border-2 mx-2" style="height: 300px; display: flex; flex-direction: column; justify-content: center">
