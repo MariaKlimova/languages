@@ -1,0 +1,19 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Ваши списки
+{% endblock %}
+
+
+{% block content %}
+<div class="container px-4 py-5" id="lists_block">
+
+</div>
+{% endblock %}
+{% block footer_scripts %}
+    {% load static %}
+    <img src="{% static 'spain.jpg' %}" alt="Проект про математику" width="32" height="32"/>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    {% load static %}
+    <script type="module" src="{% static 'lists_page.js' %}"></script>
+{% endblock %}

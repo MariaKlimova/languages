@@ -1,0 +1,75 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Создать список
+{% endblock %}
+
+{% block page-lead %}
+{#Когда вы нажмёте на кнопку &laquo;Отправить&raquo;, веб-приложению отправится POST-запрос.#}
+{#При этом в полях <span class="fst-italic">Имя</span> и <span class="fst-italic">Email</span> есть атрибут#}
+{#<code>value required</code>, который подсказывает пользователю о необходимости заполнения — это свойство Bootstrap.#}
+{% endblock %}
+
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="term-form">
+
+        <div class="row px-2 py-2">
+            <h3>Настройки списка</h3>
+        </div>
+        <div class="row px-2 py-2">
+            <div class="col-md-6">
+                <label for="name">Название списка</label>
+                <input type="text" class="form-control input-lg" id="list_name" placeholder="Введите название*" value required>
+            </div>
+            <div class="col-md-6">
+                <label for="new_definition">Описание списка</label>
+                <textarea type="text" class="form-control input-lg" name="new_description" id="new_description" aria-describedby="description_note" rows="3" placeholder="Введите описание (необязательно)"></textarea>
+            </div>
+            <div class="dropdown my-2" id="chooseLanguage">
+              <button class="btn btn-secondary dropdown-toggle"
+                      type="button" data-bs-toggle="dropdown"
+                      role="button"
+                      aria-expanded="false" id="chooseLanguageButton">
+                Выберите язык
+              </button>
+              <ul class="dropdown-menu" id="chooseLanguageDropDown">
+                <li><button class="dropdown-item langOption" type="button" id="english">English</li>
+                <li><button class="dropdown-item langOption" type="button" id="spanish">Español</button></li>
+                <li><button class="dropdown-item langOption" type="button" id="chinese">中文</button></li>
+              </ul>
+            </div>
+
+{#            <div class="col-md-6">#}
+{#                <label for="email">Ваш контактный email:</label>#}
+{#                <input type="text" class="form-control input-lg" name="email" id="email" placeholder="ivan@ivanov.com" value required>#}
+{#            </div>#}
+        </div>
+        <div class="row px-2 py-2">
+            <h3>Ваши слова</h3>
+        </div>
+        <div class="container text-center"  id="list">
+
+{#        <div class="row px-4 py-2" id="list">#}
+{#            <div class="col-md-4">#}
+{#                <label for="new_term">Слово</label>#}
+{#                <input type="text" class="form-control input-lg" name="new_term" id="new_term">#}
+{#            </div>#}
+{#            <div class="col-md-8">#}
+{#                <label for="new_definition">Перевод</label>#}
+{#                <input type="text" class="form-control input-lg" name="new_definition" id="new_term">#}
+{#            </div>#}
+        </div>
+        <div class="row px-4 py-2">
+            <button class="btn btn-outline-primary" id="add_button">Добавить еще</button>
+        </div>
+        <div class="row px-4 py-2">
+            <button class="btn btn-primary disabled" id="send_button">Отправить</button>
+        </div>
+</div>
+{% endblock %}
+{% block footer_scripts %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    {% load static %}
+    <script type="module" src="{% static 'listAddTable.js' %}"></script>
+{% endblock %}

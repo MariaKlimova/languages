@@ -1,0 +1,17 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container px-4 py-5" id="list-block">
+
+</div>
+{% endblock %}
+{% block footer_scripts %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    {% load static %}
+    <script type="module" src="{% static 'word_list_page.js' %}"></script>
+{% endblock %}

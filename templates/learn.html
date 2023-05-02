@@ -1,0 +1,23 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Режим изучения
+{% endblock %}
+
+
+{% block content %}
+<div class="container px-4 py-5" style="display: inline-flex; justify-content: center" id="main-container">
+    <div class="card border-primary border-5" style="width: 50%; display: inline-flex; justify-content: center; height: 300px " id="flashcard">
+      <div class="card-body" style="align-items: center; justify-content: center; display: grid" >
+        <h1 class="card-title">Готовы?</h1>
+          <button type="button" class="btn btn-primary" id="start-button">Начать</button>
+      </div>
+</div>
+</div>
+{% endblock %}
+{% block footer_scripts %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js">
+    </script>
+    {% load static %}
+    <script type="module" src="{% static 'learnPage.js' %}"></script>
+{% endblock %}
